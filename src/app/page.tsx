@@ -9,7 +9,7 @@ export default function Home() {
     .then( res => {
       if ( res.ok ) return res.json()
     } )
-    .then( console.log )
+    .then( json => console.log( 'Message from FastAPI Back End', ':', json.message ) )
     .catch( console.error )
   }, [])
 
