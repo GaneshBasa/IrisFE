@@ -1,5 +1,5 @@
-const be_http_root = 'http' + '://' + process.env.NEXT_PUBLIC_BE_DOMAIN
-const be_ws_root = 'ws' + '://' + process.env.NEXT_PUBLIC_BE_DOMAIN
+const be_http_root = 'https' + '://' + process.env.NEXT_PUBLIC_BE_DOMAIN
+const be_ws_root = 'wss' + '://' + process.env.NEXT_PUBLIC_BE_DOMAIN
 
 export const name = 'Iris'
 
