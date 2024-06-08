@@ -2,10 +2,13 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import { be } from "@common/config";
 
 export default function Home() {
   useEffect(() => {
-    fetch( 'https://iris-be.vercel.app' )
+    console.log( be )
+
+    fetch( be.http_root )
     .then( res => {
       if ( res.ok ) return res.json()
     } )
