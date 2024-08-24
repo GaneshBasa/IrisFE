@@ -1,19 +1,17 @@
 'use client'
 
 import { FC, useEffect } from 'react'
+import axios from 'axios'
 import { FlaskConical } from 'lucide-react'
 
 import { be } from '@common/config'
 
 
 const RootPage : FC = () => {
-  useEffect(() => {
-    console.log( be )
+  useEffect( () => {
+    axios.get( be.http_root ).then( console.log ).catch( console.error )
+  }, [] )
 
-    fetch( be.http_root )
-    .then( console.log )
-    .catch( console.error )
-  }, [])
 
   return (
     <section className='min-h-screen flex'>
