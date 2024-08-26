@@ -1,16 +1,22 @@
 'use client'
 
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import axios from 'axios'
 import { FlaskConical } from 'lucide-react'
 
-import { be } from '@common/config'
+import { be, randomUserAPI } from '@common/config'
 
 
-const RootPage : FC = () => {
+const TestPage : FC = () => {
+  const [ mounted, setMounted ] = useState( false )
+
+  useEffect( () => setMounted( true ), [] )
+
   useEffect( () => {
-    axios.get( be.http_root ).then( console.log ).catch( console.error )
-  }, [] )
+    if ( mounted ) {
+      axios.get( be.http_root ).then( console.log ).catch( console.error )
+    }
+  }, [ mounted ] )
 
 
   return (
@@ -26,4 +32,4 @@ const RootPage : FC = () => {
 }
 
 
-export default RootPage
+export default TestPage
