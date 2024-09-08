@@ -3,9 +3,13 @@ import type { Metadata } from 'next'
 import type { RootLayoutProps } from '@common/interfaces'
 import { Inter as FontSans } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
+import { ThemeWrapper } from '@components/theme-wrapper'
 import { cn } from '@lib/utils'
 import { name } from '@common/config'
+import SiteHeader from '@components/site-header'
+// import SiteFooter from '@components/site-footer'
 import '@styles/globals.css'
+import '@styles/themes.css'
 
 
 const fontSans = FontSans({
@@ -43,9 +47,13 @@ const RootLayout : FC < RootLayoutProps > = ({ children }) => (
         enableSystem
         disableTransitionOnChange
       >
-        <main className='min-h-screen'>
-          {children}
-        </main>
+        <ThemeWrapper>
+          <SiteHeader />
+          <main className='min-h-screen'>
+            {children}
+          </main>
+          {/* <SiteFooter /> */}
+        </ThemeWrapper>
       </ThemeProvider>
     </body>
   </html>
