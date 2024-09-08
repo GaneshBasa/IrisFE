@@ -18,10 +18,21 @@
       }
     ],
     "paths": {
+      "@projects/*": ["./public/assets/projects/*"],
+      "@assets/*": ["./public/assets/*"],
       "@public/*": ["./public/*"],
 
       "@app/*": ["./src/app/*"],
       "@common/*": ["./src/common/*"],
+
+      "@nav/*": ["./src/components/nav/*"],
+      "@section/*": ["./src/components/section/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      
+      "@components/*": ["./src/components/*"],
+
+      "@context/*": ["./src/context/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@lib/*": ["./src/lib/*"],
       "@styles/*": ["./src/styles/*"],
 
